@@ -1,0 +1,33 @@
+services:
+  frontend:
+    env_file:
+      - ./frontend/.env
+    build:
+      context: ./frontend
+    depends_on:
+      - db
+    networks:
+      - frontend
+  backend:
+    env_file:
+      - ./backend/.env
+    build:
+      context: ./backend
+    depends_on:
+      - db
+    networks:
+      - backend
+      - frontend
+  db:
+    env_file:
+      - ./db/.env
+    build:
+      context: ./db
+    networks:
+      - backend
+volumes:
+  db_data:
+
+networks:
+  backend:
+  frontend:

@@ -13,7 +13,7 @@
           :type="input.type" />
       </li>
     </ul>
-    <Button @submit="console.log('submit')">
+    <Button @submit="submit()">
       <div class="p-2 m-2 w-fit rounded-xl bg-accent hover:brightness-110">
         <h3 class="font-base text-large text-white pl-6 pr-6">
           {{ submit_label }}
